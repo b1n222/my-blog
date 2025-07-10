@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5001;
 // 미들웨어 순서 확인
 app.use(
   cors({
-    origin: "http://localhost:5173", // 나중에 우리 리액트 앱 주소
+    origin: ["http://localhost:5173", process.env.FRONTEND_URL], // 나중에 우리 리액트 앱 주소
     credentials: true, // ⭐️ 이 옵션이 반드시 true여야 쿠키를 주고받을 수 있음!
   })
 );
@@ -34,6 +34,10 @@ app.use("/api/auth", authRoutes); // 이 부분이
 // 정확한지
 
 app.use("/api/posts", postRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Backend server is live!");
+});
 
 app.listen(PORT, () => {
   console.log(`서버가 ${PORT}번 포트에서 실행 중입니다.`);
