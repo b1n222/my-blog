@@ -21,7 +21,7 @@ function Login() {
     try {
       // 4. 백엔드 API에 로그인 요청 보내기
       await axios.post(
-        "http://localhost:5001/api/auth/login",
+        `${import.meta.env.VITE_API_BASE_URL}/api/auth/login`,
         {
           username: username,
           password: password,

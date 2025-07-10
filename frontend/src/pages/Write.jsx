@@ -18,7 +18,7 @@ function Write() {
     try {
       // 3. 백엔드의 글쓰기 API로 데이터 전송
       await axios.post(
-        "http://localhost:5001/api/posts",
+        `${import.meta.env.VITE_API_BASE_URL}/api/posts`,
         {
           title: title,
           content: content,

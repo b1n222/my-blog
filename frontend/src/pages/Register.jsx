@@ -20,10 +20,13 @@ function Register() {
 
     try {
       // 백엔드 API에 회원가입 요청 보내기
-      await axios.post("http://localhost:5001/api/auth/register", {
-        username: username,
-        password: password,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/auth/register`,
+        {
+          username: username,
+          password: password,
+        }
+      );
       alert("회원가입이 성공적으로 완료되었습니다!");
       navigate("/login"); // 성공 시 로그인 페이지로 이동
     } catch (error) {
