@@ -103,6 +103,8 @@ router.post("/login", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true, // JavaScript 코드로 쿠키에 접근하는 것을 막음 (보안에 중요!)
+        secure: true, // ⭐️ HTTPS 통신에서만 쿠키를 전송하도록 설정
+        sameSite: "none", // ⭐️ 다른 도메인 간의 요청에도 쿠키를 전송하도록 허용
         maxAge: 60 * 60 * 1000, // 쿠키 유효기간 (1시간). 밀리초 단위.
       })
       .json({
