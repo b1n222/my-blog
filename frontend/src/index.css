@@ -1,0 +1,142 @@
+/* ⭐️ 웹 페이지 전체의 기본 스타일을 정의합니다. */
+body {
+  /* 컴퓨터에 설치된 폰트 중 가장 적합한 폰트를 순서대로 적용합니다. (깔끔한 시스템 폰트 위주) */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  /* 페이지 배경색을 약간의 회색으로 설정합니다. (#f0f2f5) */
+  background-color: #f0f2f5;
+  /* 기본 글자색을 설정합니다. (#1c1e21) */
+  color: #1c1e21;
+  /* 브라우저 기본 여백을 제거합니다. */
+  margin: 0;
+  /* 내부 요소들을 유연하게 배치하기 위해 Flexbox 모델을 사용합니다. */
+  display: flex;
+  /* Flexbox의 가로축 정렬을 '중앙'으로 합니다. */
+  justify-content: center;
+  /* Flexbox의 세로축 정렬을 '중앙'으로 합니다. */
+  align-items: center;
+  /* 최소 높이를 화면 전체 높이(100vh)로 설정하여, 내용이 적어도 항상 중앙에 있도록 합니다. */
+  min-height: 100vh;
+}
+
+/* ⭐️ 내비게이션 바 스타일 */
+nav {
+  /* 위치를 절대 좌표로 설정합니다. (body 기준) */
+  position: absolute;
+  /* 위에서 20px 떨어뜨립니다. */
+  top: 20px;
+  /* 왼쪽에서 20px 떨어뜨립니다. */
+  left: 20px;
+  /* 배경색을 흰색으로 합니다. */
+  background-color: white;
+  /* 안쪽 여백을 위아래 10px, 좌우 20px 줍니다. */
+  padding: 10px 20px;
+  /* 모서리를 8px만큼 둥글게 깎습니다. */
+  border-radius: 8px;
+  /* 그림자 효과를 줍니다. (x축, y축, 흐림 정도, 색상) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ⭐️ 내비게이션 바 안의 링크(a 태그) 스타일 */
+nav a {
+  /* 좌우 링크 사이의 여백을 10px 줍니다. */
+  margin: 0 10px;
+  /* 링크의 기본 밑줄을 제거합니다. */
+  text-decoration: none;
+  /* 링크 글자색을 파란색으로 합니다. (#1877f2) */
+  color: #1877f2;
+  /* 글자를 굵게 만듭니다. */
+  font-weight: bold;
+}
+
+/* ⭐️ 입력 폼을 감싸는 컨테이너 스타일 */
+.form-container {
+  /* 배경색을 흰색으로 합니다. */
+  background-color: #fff;
+  /* 안쪽 여백을 2rem(약 32px) 줍니다. */
+  padding: 2rem;
+  /* 모서리를 8px 둥글게 합니다. */
+  border-radius: 8px;
+  /* 두 종류의 그림자를 겹쳐서 입체감을 줍니다. */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* 너비를 100%로 하되, */
+  width: 100%;
+  /* 최대 너비를 400px로 제한합니다. (화면이 커져도 폼이 너무 넓어지지 않게) */
+  max-width: 400px;
+  /* padding과 border가 너비(width)에 포함되도록 계산 방식을 바꿉니다. */
+  box-sizing: border-box;
+}
+
+/* ⭐️ 폼 컨테이너 안의 제목(h2) 스타일 */
+.form-container h2 {
+  /* 글자를 가운데 정렬합니다. */
+  text-align: center;
+  /* 글자색을 설정합니다. */
+  color: #1c1e21;
+  /* 아래쪽 여백을 1.5rem(약 24px) 줍니다. */
+  margin-bottom: 1.5rem;
+}
+
+/* ⭐️ 라벨과 입력창을 한 쌍으로 묶는 그룹 스타일 */
+.form-group {
+  /* 그룹 아래쪽에 1rem(약 16px)의 여백을 줍니다. */
+  margin-bottom: 1rem;
+}
+
+/* ⭐️ 입력창(input) 위의 라벨(label) 스타일 */
+.form-group label {
+  /* 라벨이 한 줄을 모두 차지하도록 블록 요소로 만듭니다. */
+  display: block;
+  /* 라벨 아래쪽에 0.5rem(약 8px)의 여백을 줍니다. */
+  margin-bottom: 0.5rem;
+  /* 글자 크기를 14px로 합니다. */
+  font-size: 14px;
+  /* 글자색을 설정합니다. (#606770) */
+  color: #606770;
+}
+
+/* ⭐️ 입력창(input) 스타일 */
+.form-group input {
+  /* 너비를 부모 요소(form-group)에 꽉 채웁니다. */
+  width: 100%;
+  /* 안쪽 여백을 12px 줍니다. */
+  padding: 12px;
+  /* 테두리를 1px 두께의 연한 회색 실선으로 설정합니다. */
+  border: 1px solid #dddfe2;
+  /* 모서리를 6px 둥글게 합니다. */
+  border-radius: 6px;
+  /* 글자 크기를 16px로 합니다. */
+  font-size: 16px;
+  /* 너비 계산 방식을 바꿉니다. */
+  box-sizing: border-box;
+}
+
+/* ⭐️ 버튼 스타일 */
+button {
+  /* 너비를 100%로 꽉 채웁니다. */
+  width: 100%;
+  /* 안쪽 여백을 12px 줍니다. */
+  padding: 12px;
+  /* 테두리를 없앱니다. */
+  border: none;
+  /* 모서리를 6px 둥글게 합니다. */
+  border-radius: 6px;
+  /* 배경색을 파란색으로 합니다. */
+  background-color: #1877f2;
+  /* 글자색을 흰색으로 합니다. */
+  color: white;
+  /* 글자 크기를 18px로 합니다. */
+  font-size: 18px;
+  /* 글자를 굵게 합니다. */
+  font-weight: bold;
+  /* 마우스 커서를 올렸을 때 손가락 모양으로 바꿉니다. */
+  cursor: pointer;
+  /* 배경색이 변할 때 0.2초 동안 부드럽게 변하는 효과를 줍니다. */
+  transition: background-color 0.2s;
+}
+
+/* ⭐️ 버튼에 마우스를 올렸을 때(hover)의 스타일 */
+button:hover {
+  /* 배경색을 약간 더 진한 파란색으로 바꿉니다. */
+  background-color: #166fe5;
+}
